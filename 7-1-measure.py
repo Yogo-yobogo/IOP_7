@@ -59,7 +59,7 @@ finally :
     stop_time = time.time()
     data_value_str = [str(i) for i in data_value]
     
-    data_set.append ("Sampling rate = " + str((stop_time - start_time) / len(data_value)))
+    data_set.append ("Sampling rate = " + str(len(data_value) /(stop_time - start_time)))
     data_set.append ("Quantization step = " + str(max_voltage / number_of_values))
 
     with open ("data.txt", "w") as output:

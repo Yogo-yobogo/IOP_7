@@ -1,2 +1,2 @@
-Sampling rate = 0.09993337467312813
+Sampling rate = 9.102088285049502
 Quantization step = 0.012941176470588235
