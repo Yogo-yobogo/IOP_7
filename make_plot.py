@@ -48,5 +48,5 @@ ax.set_xlim([0, 65])
 ax.set_ylim([0, 3])
 
 ax.legend ()
-plt.savefig('Voltage_plot', format = 'png')
+plt.savefig('Voltage_plot.png', format = 'png')
 #plt.show()
