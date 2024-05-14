@@ -18,11 +18,13 @@ y_axis = [i * settings[1] for i in data]
 for i in range (0,  len(data)):
     x_axis.append (i / settings[0])
 
-ax.plot(x_axis, y_axis,linewidth = 2.0)
-
 new_x_axis = [x_axis[i] for i in range (0, len(x_axis), 4)]
 new_y_axis = [y_axis[i] for i in range (0, len(y_axis), 4)]
-ax.plot(new_x_axis, new_y_axis, 'r*', label = 'Experemental dots')
+
+
+ax.plot(new_x_axis, new_y_axis, marker = '*', color = 'blue', label = 'Experemental dots', linewidth = 2.0)
+
+
 
 plt.title ('Plot of voltage dendence from time')
 plt.xlabel ('time, sec')
@@ -39,8 +41,11 @@ ax.yaxis.set_minor_locator(AutoMinorLocator(5))
 
 #ax.xaxis.set_minor_formatter(FuncFormatter(minor_tick))
 
-ax.grid (True, which = 'major')
-ax.grid (True, which = 'minor')
+ax.grid (which = 'major')
+ax.grid (which = 'minor', linestyle=':')
+
+ax.set_xlim([0, 65])
+ax.set_ylim([0, 3])
 
 ax.legend ()
 plt.savefig('Voltage_plot', format = 'png')
