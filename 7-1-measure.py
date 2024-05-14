@@ -46,7 +46,7 @@ try:
         value = adc()
         data_value.append(value)
 
-        if value <= 20:
+        if value <= 16:
             GPIO.output (troyka, 1)
         elif value >= 213:
             GPIO.output (troyka, 0)
@@ -59,8 +59,8 @@ finally :
     stop_time = time.time()
     data_value_str = [str(i) for i in data_value]
     
-    for i in range (0, len(data_value)):
-        data_set.append (str(data_value[i] * max_voltage / number_of_values) + " " + str (i * (stop_time - start_time) / len(data_value)))
+    data_set.append ("Sampling rate = " + str((stop_time - start_time) / len(data_value)))
+    data_set.append ("Quantization step = " + str(max_voltage / number_of_values))
 
     with open ("data.txt", "w") as output:
         output.write("\n".join(data_value_str))
