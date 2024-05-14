@@ -1,7 +1,5 @@
 import RPi.GPIO as GPIO
 import time
-import matplotlib as plt
-import numpy as np
 
 def dec_to_bin(number):
     return [int(element) for element in  bin(number)[2:].zfill(8)]
